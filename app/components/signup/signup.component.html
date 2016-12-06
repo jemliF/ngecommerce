@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col s6 offset-s3">
+    <toaster-container class="right"></toaster-container>
+    <form name="signup" ngNoForm>
+      <h1>Signup</h1>
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input [(ngModel)]="client.firstname" placeholder="First name" id="firstname" type="text" class="validate">
+        <label for="firstname">First name</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input [(ngModel)]="client.lastname" placeholder="Last name" id="lastname" type="text" class="validate">
+        <label for="lastname">Last name</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">email</i>
+        <input [(ngModel)]="client.email" placeholder="Email" id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">lock</i>
+        <input [(ngModel)]="client.password" id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">photo</i>
+        <input type="file" ng2FileSelect [uploader]="uploader"/>
+      </div>
+
+    </form>
+    <button class="btn waves-effect waves-light right" (click)="signup()">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+</div>

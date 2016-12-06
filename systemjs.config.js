@@ -6,7 +6,8 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/'
+      'npm:': 'node_modules/',
+      'angular2-toaster/all': 'node_modules/angular2-toaster/all'
     },
     // map tells the System loader where to look for things
     map: {
@@ -24,8 +25,10 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
       // other libraries
-      'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'rxjs': 'npm:rxjs',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'angular2-toaster': 'node_modules/angular2-toaster',
+      'ng2-cloudinary': 'node_modules/ng2-cloudinary'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -34,6 +37,12 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      'angular2-toaster': {
+        defaultExtension: 'js'
+      },
+      'ng2-cloudinary': {
         defaultExtension: 'js'
       }
     }

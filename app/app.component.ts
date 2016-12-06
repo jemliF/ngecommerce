@@ -3,8 +3,7 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.component.html',
-  components: [NavbarComponent]
+  templateUrl: 'app/app.component.html'
 })
 export class AppComponent {
   name = 'Angular';

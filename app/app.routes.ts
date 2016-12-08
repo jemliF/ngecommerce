@@ -5,10 +5,12 @@ import {SearchComponent} from "./components/search/search.component";
 import {SignupComponent} from "./components/signup/signup.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {ModuleWithProviders} from "@angular/core";
+import {AuthGuard} from "./auth.guard";
 const routes:Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -16,7 +18,8 @@ const routes:Routes = [
   },
   {
     path: 'search',
-    component: SearchComponent
+    component: SearchComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'signup',
@@ -24,7 +27,8 @@ const routes:Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent
+    component: CartComponent,
+    canActivate: [AuthGuard]
   }
 ]
 

@@ -1,4 +1,4 @@
-export declare class Client {
+export class Client {
   _id?:string;
   firstname:string;
   lastname:string;
@@ -6,6 +6,17 @@ export declare class Client {
   password:string;
   avatarUrl:string;
 
-  constructor(client:any);
+
+  constructor() {
+    this.firstname = '';
+    this.lastname = '';
+    this.email = '';
+    this.password = '';
+    this.avatarUrl = '';
+  }
+
+  public setAvatarUrl(avatarUrl:string) {
+    this.avatarUrl = avatarUrl;
+  }
 
 }

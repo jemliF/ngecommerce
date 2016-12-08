@@ -1,6 +1,48 @@
-<div class="col s3">
+<div class="col s4">
   <search></search>
 </div>
-<div class="col s9">
+<div class="col s8">
+  <div class="input-field">
+    <!--label for="categories">Filter By Categories</label-->
+    <select id="categories" [(ngModel)]="selectedCategories" (change)="onCategoryFilterChanged($event)"
+            style="display: block"
+            required>
+      <option *ngFor="let categori of categories" [ngValue]="categori._id">{{categori.name}}</option>
+    </select>
+  </div>
 
+  <img src="../../../vendors/img/loader.gif" *ngIf="loading" class="center-block" style="margin-top: 50px;">
+  <div *ngIf="!loading">
+    <div class="card" *ngFor="let product of products">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" [src]="product.imageUrl" style="max-width: 200px; max-height: 200px;">
+      </div>
+      <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">{{product.name}}<i
+      class="material-icons right">more_vert</i></span>
+        <div class="valign-wrapper">
+          <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" data-target="qteModal"
+             href="#qteModal"><i
+            class="material-icons">add</i></a>
+        </div>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+        <p>{{product.description}}</p>
+      </div>
+    </div>
+  </div>
 </div>
+<!-- Qte Modal -->
+<div id="qteModal" class="modal">
+  <div class="modal-content">
+    <div class="input-field" style="margin-left: 20px;">
+      <input placeholder="Qte" id="qte" type="number" class="validate">
+      <label for="qte">Quantity</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+

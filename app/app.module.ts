@@ -14,12 +14,15 @@ import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import {ToasterModule} from "angular2-toaster/angular2-toaster";
 import {Ng2CloudinaryModule} from "ng2-cloudinary/ng2-cloudinary";
+import {AuthGuard} from "./auth.guard";
+import {ProductService} from "./services/product.service";
+import {CategoryService} from "./services/category.service";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpModule, routing, ToasterModule, Ng2CloudinaryModule],
   declarations: [AppComponent, NavbarComponent, HomeComponent, SearchComponent, LoginComponent, SignupComponent, CartComponent],
   bootstrap: [AppComponent],
-  providers: [ClientService]
+  providers: [ClientService, AuthGuard, ProductService, CategoryService]
 })
 export class AppModule {
 }

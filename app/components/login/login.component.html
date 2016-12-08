@@ -1,18 +1,21 @@
 <div class="row">
-  <form class="col s6 offset-s3">
-    <h1>Login</h1>
-    <div class="input-field">
-      <i class="material-icons prefix">email</i>
-      <input placeholder="Email" id="email" type="email" class="validate">
-      <label for="email">Email</label>
-    </div>
-    <div class="input-field">
-      <i class="material-icons prefix">lock</i>
-      <input id="password" type="password" class="validate">
-      <label for="password">Password</label>
-    </div>
+  <div class="col s6 offset-s3">
+    <toaster-container></toaster-container>
+    <form ngNoForm name="login">
+      <h1>Login</h1>
+      <div class="input-field">
+        <i class="material-icons prefix">email</i>
+        <input placeholder="Email" id="email" type="email" class="validate" [(ngModel)]="email">
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">lock</i>
+        <input id="password" type="password" class="validate" [(ngModel)]="password">
+        <label for="password">Password</label>
+      </div>
+    </form>
     <button class="btn waves-effect waves-light right" (click)="login()">Submit
       <i class="material-icons right">send</i>
     </button>
-  </form>
+  </div>
 </div>

@@ -25,4 +25,8 @@ export class ClientService {
   isLoggedIn() {
     return localStorage.getItem('client') !== null;
   }
+
+  logout() {
+    localStorage.removeItem('client');
+  }
 }
